@@ -1,0 +1,6 @@
+{
+    "homepage": "https://github.com/abdnh/anki-addon-template",
+    "min_point_version": 46,
+    "name": "Fix Clozes",
+    "package": "fix_clozes"
+}
