@@ -13,3 +13,12 @@ def test_fixes_clozes_with_multiple_overlapping_tags() -> None:
     expected = "hello <span><b>world </b></span>{{c1::test}}"
     replaced = fix_clozes_with_overlapping_html(text)
     assert replaced == expected
+
+
+def test_fixes_clozes_overlapping_element_after_valid_ones() -> None:
+    text = "<div>{{c5::<strong><br></strong></div><div><strong></strong></div>test}}"
+    expected = (
+        "<div><strong><br></strong></div>{{c5::<div><strong></strong></div>test}}"
+    )
+    replaced = fix_clozes_with_overlapping_html(text)
+    assert replaced == expected
