@@ -1,7 +1,6 @@
 import re
 
-# CLOZE_WITH_OVERLAPPING_HTML_RE = re.compile(r"(?si)({{c\d+::)((\</.*?\>)+)(.*?}})")
-CLOZE_RE = re.compile(r"(?si)({{c\d+::)(.*?)(}})")
+CLOZE_RE = re.compile(r"(?si)({{c\d+::)(.*)(}})")
 HTML_RE = re.compile(r"<.*?>")
 
 # https://developer.mozilla.org/en-US/docs/Glossary/Void_element
@@ -26,6 +25,8 @@ VOID_ELEMENTS = (
 def fix_clozes_with_overlapping_html(text: str) -> str:
     def repl(match: re.Match) -> str:
         text = match.group(2)
+        # Handle nested clozes
+        text = fix_clozes_with_overlapping_html(text)
         new_start = 0
         before_cloze = ""
         opening_tags_count = 0
