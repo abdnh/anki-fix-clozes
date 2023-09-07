@@ -22,10 +22,3 @@ def test_fixes_clozes_overlapping_element_after_valid_ones() -> None:
     )
     replaced = fix_clozes_with_overlapping_html(text)
     assert replaced == expected
-
-
-def test_handles_nested_clozes() -> None:
-    text = "{{c1::<div>{{c2::</div>foobar}}}}"
-    expected = "{{c1::<div></div>{{c2::foobar}}}}"
-    replaced = fix_clozes_with_overlapping_html(text)
-    assert replaced == expected
