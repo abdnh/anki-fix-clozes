@@ -23,4 +23,4 @@ package-dir = { "fix_clozes" = "src" }
 [tool.setuptools_scm]
 
 [project.urls]
-Repository = "https://github.com/abdnh/anki-addon-template"
+Repository = "https://github.com/abdnh/anki-fix-clozes"
