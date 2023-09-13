@@ -22,3 +22,10 @@ def test_fixes_clozes_overlapping_element_after_valid_ones() -> None:
     )
     replaced = fix_clozes_with_overlapping_html(text)
     assert replaced == expected
+
+
+def test_fixes_clozes_with_opening_tag_at_end() -> None:
+    text = "{{c1::test<div>zz}}ww</div>"
+    expected = "{{c1::test}}<div>zzww</div>"
+    replaced = fix_clozes_with_overlapping_html(text)
+    assert replaced == expected
