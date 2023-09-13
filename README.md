@@ -14,6 +14,10 @@ will be converted to
 hello <span>world </span>{{c1::test}}
 ```
 
+## Known Issues
+
+Nested clozes are not supported at the moment and the add-on will probably fail to fix issues in them.
+
 ## Changelog
 
 See [CHANGELOG.md](CHANGELOG.md) for a list of changes.
