@@ -18,6 +18,10 @@ hello <span>world </span>{{c1::test}}
 
 Nested clozes are not supported at the moment and the add-on will probably fail to fix issues in them.
 
+## Download
+
+You can download the add-on from AnkiWeb: [938189964](https://ankiweb.net/shared/info/938189964)
+
 ## Changelog
 
 See [CHANGELOG.md](CHANGELOG.md) for a list of changes.
